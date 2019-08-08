@@ -1,7 +1,10 @@
 import React from 'react';
 import List from './List';
 
-const { useState } = React;
+const { useState, createContext } = React;
+
+export const context = createContext();
+const { Provider } = context;
 
 const App = () => {
     const [items, setItems] = useState([
@@ -12,8 +15,8 @@ const App = () => {
     ]);
 
     const addNewItem = value => {
-        // items.push(value);
-        // setItems(items);
+        // productions.push(value);
+        // setProdutions(productions);
         setItems(preProductions => preProductions.concat(value));
     };
 
@@ -26,11 +29,9 @@ const App = () => {
     return (
         <div className="App">
             <div className="items">
-                <List
-                    onAddNewItem={addNewItem}
-                    items={items}
-                    onDeleteItem={deleteItem}
-                />
+                <Provider value={{ items, addNewItem, deleteItem }}>
+                    <List />
+                </Provider>
             </div>
         </div>
     );

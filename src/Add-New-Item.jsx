@@ -1,11 +1,14 @@
 import React from 'react';
+import { context } from './App';
+const { useContext } = React;
 
 const { useRef } = React;
-const NewItem = ({ onAddNewItem }) => {
+const NewItem = () => {
+    const { addNewItem } = useContext(context);
     const inputRef = useRef();
     const onSubmit = e => {
         e.preventDefault();
-        onAddNewItem(inputRef.current.value);
+        addNewItem(inputRef.current.value);
     };
     return (
         <form onSubmit={onSubmit}>

@@ -1,45 +1,43 @@
 .App {
-  font-family: sans-serif;
+    font-family: sans-serif;
 }
 
 ul {
-  list-style-type: none;
-  margin-top: 0;
-  position: relative;
-  min-height: 32px;
+    list-style-type: none;
+    margin-top: 0;
+    position: relative;
+    min-height: 32px;
 }
 
 li {
-  padding: 8px;
-  margin-top: 10px;
-  text-align: center;
-  border: 1px solid #abcdef;
+    padding: 8px;
+    margin-top: 10px;
+    text-align: center;
+    border: 1px solid #abcdef;
 }
 
 li button {
-  background-color: #fff;
-  border: none;
-  color: #f00;
-  cursor: pointer;
-  float: right;
-  margin-right: 2px;
-  transform: scale(1.5);
+    background-color: #fff;
+    border: none;
+    color: #f00;
+    cursor: trash;
+    float: right;
+    margin-right: 2px;
+    transform: scale(1.5);
 }
 
-
-
 form {
-  position: relative;
-  margin-top: 1px;
+    position: relative;
+    margin-top: 1px;
 }
 
 form button {
-  padding: 8px;
-  background-color: #fff;
-  color: #000;
+    padding: 8px;
+    background-color: #fff;
+    color: #000;
 }
 
 form input {
-  margin-right: 2px;
-  padding: 8px;
+    margin-right: 2px;
+    padding: 8px;
 }
