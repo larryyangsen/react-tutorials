@@ -1,0 +1,37 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+import './index.css';
+
+const name = 'Moto';
+// const element = (
+//   <div>
+//     <h1>Hello, {name} </h1>
+//   </div>
+// );
+
+// const element = (
+//   <div className="App">
+//     <h1>Hello, {name} </h1>
+//   </div>
+// );
+const onClick = item => {
+    alert(item);
+};
+const items = ['A', 'B', 'C'];
+const element = (
+    <div className="App">
+        <h1>Hello, {name} </h1>
+        {items.map((item, i) => (
+            <button disabled={i === 0} onClick={() => onClick(item)} key={i}>
+                {item}
+            </button>
+        ))}
+    </div>
+);
+
+ReactDOM.render(element, document.getElementById('root'));
+
+// If you want your app to work offline and load faster, you can change
+// unregister() to register() below. Note this comes with some pitfalls.
+// Learn more about service workers: https://bit.ly/CRA-PWA
