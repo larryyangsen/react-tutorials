@@ -1,21 +1,37 @@
 import React from 'react';
 import List from './List';
-import ListWithChildren from './List-With-Children';
-import ChangeProps from './Change-Props';
 
-const items = ['iNu', 'WFM', 'Log 8000', 'QMS'];
-const items2 = ['CIC', 'IVR', 'eVoice'];
+const { useState } = React;
 
 const App = () => {
+    const [items, setItems] = useState([
+        'Potion',
+        'Ether',
+        'Phoenix Down',
+        'Tent'
+    ]);
+
+    const addNewItem = value => {
+        // items.push(value);
+        // setItems(items);
+        setItems(preProductions => preProductions.concat(value));
+    };
+
+    const deleteItem = index => {
+        const toDeleteProductions = items.slice();
+        toDeleteProductions.splice(index, 1);
+        setItems(toDeleteProductions);
+    };
+
     return (
         <div className="App">
-            <div className="productions">
-                <List items={items} />
+            <div className="items">
+                <List
+                    onAddNewItem={addNewItem}
+                    items={items}
+                    onDeleteItem={deleteItem}
+                />
             </div>
-            <ListWithChildren items={items2}>
-                <h3>I am a child</h3>
-            </ListWithChildren>
-            <ChangeProps name="Richard" />
         </div>
     );
 };
