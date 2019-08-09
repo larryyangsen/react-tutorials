@@ -1,0 +1,12 @@
+.App {
+  font-family: sans-serif;
+  min-height: 80vh;
+  display: flex;
+}
+
+.App div {
+  width: 800px;
+  max-height: 50px;
+  overflow-y: auto;
+  margin: auto;
+}
