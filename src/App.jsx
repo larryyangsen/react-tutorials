@@ -1,21 +1,43 @@
 import React from 'react';
-import List from './List';
-import ListWithChildren from './List-With-Children';
-import ChangeProps from './Change-Props';
-
-const items = ['iNu', 'WFM', 'Log 8000', 'QMS'];
-const items2 = ['CIC', 'IVR', 'eVoice'];
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
+const books = ['HTML', 'JavaScript'];
+const Home = () => <div>Welcome Home</div>;
+const About = () => <div>It's me</div>;
+const Book = ({ match: { params } }) => <div>{books[params.index]}</div>;
+const Books = () => (
+    <div>
+        <ol>
+            {books.map((book, i) => (
+                <li key={i}>
+                    <Link to={`/books/${i}`}>{book}</Link>
+                </li>
+            ))}
+        </ol>
+    </div>
+);
 
 const App = () => {
     return (
         <div className="App">
-            <div className="productions">
-                <List items={items} />
-            </div>
-            <ListWithChildren items={items2}>
-                <h3>I am a child</h3>
-            </ListWithChildren>
-            <ChangeProps name="Richard" />
+            <Router>
+                <ul>
+                    <li>
+                        <Link to="/">Home</Link>
+                    </li>
+                    <li>
+                        <Link to="/About">About</Link>
+                    </li>
+                    <li>
+                        <Link to="/Books">Books</Link>
+                    </li>
+                </ul>
+                <Switch>
+                    <Route path="/" exact={true} component={Home} />
+                    <Route path="/About" component={About} />
+                    <Route path="/Books" exact={true} component={Books} />
+                    <Route path="/Books/:index" component={Book} />
+                </Switch>
+            </Router>
         </div>
     );
 };
