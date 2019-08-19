@@ -36,3 +36,5 @@ calling component in the tree.
 ```JavaScript
 const value = useContext(MyContext);
 ```
+
+### Run `npm start` to start
