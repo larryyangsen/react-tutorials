@@ -2,7 +2,7 @@
 
 ## React template system
 
-```JavaScript
+```JSX
 
 const element = (
     <div>Hello,JSX</div>
@@ -14,14 +14,14 @@ const element = (
 
 With JSX you can write expressions inside curly braces { }.
 
-```JavaScript
+```JSX
     const name = 'Moto';
     const element = <h1>Hello, {name} </h1>;
 ```
 
 ## HTML class
 
-```JavaScript
+```JSX
 const element = (
   <div className="App">
     <h1>Hello, {name} </h1>
@@ -31,7 +31,7 @@ const element = (
 
 ## Working with array and events
 
-```JavaScript
+```JSX
     const name = 'Moto';
 
     const onClick = item => {
@@ -52,7 +52,7 @@ const element = (
 
 ## JSX is not HTML
 
-```JavaScript
+```JSX
 <h1>123</h1>;
 
 React.createElement('h1', null, '123');
