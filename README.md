@@ -5,7 +5,7 @@
 Context provides a way to pass data through the component tree without having to
 pass props down manually at every level.
 
-```JavaScript
+```JSX
 
 const { createContext } = React;
 export const context = createContext({items:[]});
@@ -21,7 +21,7 @@ Creates a Context object. When React renders a component that subscribes to this
 Context object it will read the current context value from the closest matching
 Provider above it in the tree.
 
-```JavaScript
+```JSX
 const MyContext = React.createContext(defaultValue);
 
 ```
@@ -33,7 +33,7 @@ returns the current context value for that context. The current context value is
 determined by the value prop of the nearest <MyContext.Provider> above the
 calling component in the tree.
 
-```JavaScript
+```JSX
 const value = useContext(MyContext);
 ```
 
