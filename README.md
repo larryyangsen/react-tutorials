@@ -1,68 +1,61 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# JSX (JavaScript XML)
 
-## Available Scripts
+## React template system
 
-In the project directory, you can run:
+```JavaScript
 
-### `npm start`
+const element = (
+    <div>Hello,JSX</div>
+)
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+## Expressions in JSX
 
-### `npm test`
+With JSX you can write expressions inside curly braces { }.
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```JavaScript
+    const name = 'Moto';
+    const element = <h1>Hello, {name} </h1>;
+```
 
-### `npm run build`
+## HTML class
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```JavaScript
+const element = (
+  <div className="App">
+    <h1>Hello, {name} </h1>
+  </div>
+);
+```
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+## Working with array and events
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```JavaScript
+    const name = 'Moto';
 
-### `npm run eject`
+    const onClick = item => {
+      alert(item);
+    };
+    const items = ["A", "B", "C"];
+    const element = (
+      <div className="App">
+        <h1>Hello, {name} </h1>
+        {items.map((item, i) => (
+          <button disabled={i === 0} onClick={() => onClick(item)} key={i}>
+            {item}
+          </button>
+        ))}
+      </div>
+    );
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## JSX is not HTML
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```JavaScript
+<h1>123</h1>;
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+React.createElement('h1', null, '123');
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+### Run `npm start` to start
