@@ -2,7 +2,7 @@
 
 ## The inuputs of React component
 
-```JavaScript
+```JSX
 
 const items = ["One Piece", "One Punch-Man", "NARUTO", "Doraemon"];
 
@@ -27,7 +27,7 @@ const App = () => {
 
 ## Can pass components as children
 
-```JavaScript
+```JSX
 const items = [ "Detective Conan", "Slam Dunk", "YuYu"];
 
 const ListWithChildren = ({ items, children }) => (
@@ -49,7 +49,7 @@ const App=()=>(
 
 ## Change properties in component, will not render again
 
-```JavaScript
+```JSX
 const ChangeProps = ({ name }) => {
   return (
     <h1>
