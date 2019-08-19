@@ -2,7 +2,7 @@
 
 ## If you want to change your data value, then store it in the state
 
-```JavaScript
+```JSX
 
 const { useState } = React
 
@@ -22,18 +22,18 @@ const App = () => {
 
 Returns a stateful value, and a function to update it.
 
-```JavaScript
+```JSX
 const [state, setState] = useState(initialState);
 
 ```
 
 ### [useRef](https://reactjs.org/docs/hooks-reference.html#useref)
 
-```JavaScript
+```JSX
 const refContainer = useRef(initialValue);
 ```
 
-```JavaScript
+```JSX
 const NewItem = ({ onAddNewItem }) => {
   const inputRef = useRef();
   const onSubmit = e => {
@@ -61,7 +61,7 @@ const NewItem = ({ onAddNewItem }) => {
 
 ### Implement two way binding with HTML input
 
-```JavaScript
+```JSX
 const TwoWayBindingInput = () =>{
   const [value,setValue] = useState('');
   const onChange =e =>{
