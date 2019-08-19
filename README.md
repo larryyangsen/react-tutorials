@@ -4,7 +4,7 @@
 
 Creating components using functions, should use capital letter
 
-```JavaScript
+```JSX
 
 function App() {
  return (
@@ -16,7 +16,7 @@ function App() {
 
 ```
 
-```JavaScript
+```JSX
 const App = () => {
  return (
    <div className="App">
@@ -26,7 +26,7 @@ const App = () => {
 }
 ```
 
-```JavaScript
+```JSX
 const App = () => (
    <div className="App">
      <h1>Hello World</h1>
